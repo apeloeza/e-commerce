@@ -1,0 +1,535 @@
+🌐 Rencana Lengkap Website E-Commerce Produk Handmade (Node.js + SQLite)
+
+1. Tujuan Website 
+
+    Menjual produk handmade (misalnya: aksesoris, tas, perhiasan, dekorasi rumah) secara online.
+    Membangun merek lokal yang terpercaya dan estetik.
+    Memberikan pengalaman belanja yang mudah, cepat, dan aman.
+    Menjangkau wanita usia 20–40 tahun di Indonesia yang menyukai produk unik dan bernilai seni.
+     
+
+2. Target Pengguna 
+
+    Demografi: Wanita usia 20–40 tahun.
+    Karakteristik: 
+        Menghargai keunikan dan keaslian produk.
+        Aktif di media sosial (Instagram, TikTok, Pinterest).
+        Lebih suka belanja online via smartphone.
+        Peduli terhadap kualitas, desain, dan keberlanjutan.
+         
+    Kebutuhan: 
+        Produk berkualitas tinggi.
+        Proses pembayaran cepat dan aman.
+        Desain yang menarik dan ramah pengguna.
+        Informasi produk jelas dan transparan.
+         
+     
+
+3. Bahasa dan Lokalisasi 
+
+    Bahasa utama: Bahasa Indonesia (dengan opsi bahasa Inggris jika diperlukan).
+    Format lokal:
+        Harga: Rp (misalnya: Rp 125.000)
+        Tanggal: DD-MM-YYYY
+        Nomor telepon: +62 (dengan format lokal)
+         
+    Lokalisasi: Fokus pada wilayah Indonesia (dengan pengiriman lokal dan logistik lokal).
+     
+
+4. Tema & Desain 
+
+    Gaya desain: Minimalis, feminin, dan elegan.
+    Palet warna:
+        Utama: #F5E8E8 (krem lembut), #E8D5D5 (merah muda pastel)
+        Aksen: #8D6E63 (coklat muda), #A1887F (abu-abu lembut)
+         
+    Font: 
+        Heading: Poppins (sans-serif modern)
+        Body: Nunito atau Lato (mudah dibaca)
+         
+    Desain responsif: 100% mobile-first (didesain untuk layar kecil dulu).
+    Fitur tambahan: 
+        Dark mode (opsional)
+        Animasi halus saat scroll atau klik
+        Zoom gambar produk saat diperbesar
+         
+     
+
+5. Struktur Website (Halaman Utama) 
+
+Halaman					Deskripsi
+
+Home					Banner utama, produk terbaru, testimoni, info promo, kategori populer
+Kategori				Kategori produk  (misalnya: tas, perhiasan, aksesoris, dekorasi)
+Produk					Daftar produk dengan gambar, harga, deskripsi singkat, tombol "Tambah ke Keranjang"
+Detail Produk				Gambar produk (zoomable), deskripsi lengkap, stok tersedia, opsi warna/ukuran, tombol beli
+Keranjang Belanja			Daftar produk, jumlah, harga total, tombol "Checkout", opsi hapus
+Checkout				Formulir pengiriman (nama, alamat, telepon), metode pembayaran, total harga
+Pembayaran				Pilih metode: OVO, Dana, Kartu Kredit (via Stripe atau Midtrans), BCA/Kredivo
+Proses Pembayaran			Redirect ke gateway pembayaran (Midtrans), konfirmasi pesanan
+Riwayat Pesanan				Daftar pesanan, status (diproses, dikirim, selesai)
+Tentang Kami				Cerita merek, tim, proses pembuatan produk
+Kontak					Formulir, alamat, nomor telepon, WhatsApp, jam operasional
+Blog (opsional)				Artikel tentang tips gaya, inspirasi handmade, atau keberlanjutan
+Kebijakan Privasi & Syarat Penggunaan	Diperlukan untuk keamanan dan legalitas
+
+6. Fitur Penting 
+]
+Fitur					Deskripsi
+
+✅ Keranjang Belanja			Simpan produk sementara, update jumlah, hapus
+ 
+✅ Pembayaran Online			Integrasi dengan Midtrans (dukung OVO, Dana, kartu kredit)
+ 
+✅ Login/Registrasi			Dengan email atau akun sosial media (Google, Facebook)
+ 
+✅ Pencarian & Filter			Cari produk berdasarkan nama, kategori, harga
+ 
+✅ Rating & Ulasan Produk		Pengguna bisa memberi ulasan dan bintang
+ 
+✅ Notifikasi Pesanan			Email otomatis saat pesanan diterima, dikirim, selesai
+ 
+✅ Responsive Design			Tampilan optimal di HP, tablet, desktop
+ 
+✅ Admin Panel				Manajemen produk, pesanan, stok, dan pengguna (dibuat sendiri atau pakai Express Admin)
+ 
+✅ SEO Friendly				URL bersih, meta tag, sitemap
+ 
+✅ Keamanan				Enkripsi data, CSRF protection, sanitasi input
+ 
+ 
+ 
+7. Teknologi & Platform 
+
+Komponen				Teknologi
+ 
+Backend					Node.js (Express.js)
+ 
+Database				SQLite (ringan, cocok untuk skala kecil)
+ 
+Frontend				HTML, CSS (Tailwind CSS), JavaScript (React atau Vanilla JS)
+ 
+Pembayaran				Midtrans (dukung OVO, Dana, kartu kredit)
+ 
+Hosting					Vercel (frontend), Railway atau Render (backend), atau lokal untuk testing
+ 
+Autentikasi				JWT (JSON Web Token)
+ 
+File Upload				Cloudinary atau lokal (untuk gambar produk)
+ 
+Email					Nodemailer (untuk notifikasi)
+ 
+Deployment				Git + GitHub, deploy ke Vercel (frontend), Railway (backend)
+ 
+
+
+8. Struktur Folder
+ 
+ecom-handmade/
+│
+├── backend/
+│   ├── controllers/
+│   ├── models/
+│   ├── routes/
+│   ├── middleware/
+│   ├── config/
+│   └── server.js
+│
+├── frontend/
+│   ├── public/
+│   └── src/
+│       ├── components/
+│       ├── pages/
+│       ├── services/
+│       ├── App.js
+│       └── index.js
+│
+├── database/
+│   └── db.sqlite
+│
+├── .env
+├── package.json
+└── README.md 
+
+
+9. Database (SQLite) – Struktur Tabel
+
+-- Tabel Produk
+CREATE TABLE products (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name TEXT NOT NULL,
+    description TEXT,
+    price REAL NOT NULL,
+    stock INTEGER NOT NULL,
+    category TEXT,
+    image_url TEXT,
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Tabel Keranjang
+CREATE TABLE cart (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    user_id INTEGER,
+    product_id INTEGER,
+    quantity INTEGER DEFAULT 1,
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (product_id) REFERENCES products(id)
+);
+
+-- Tabel Pesanan
+CREATE TABLE orders (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    user_id INTEGER,
+    total_price REAL,
+    status TEXT DEFAULT 'pending',
+    payment_method TEXT,
+    address TEXT,
+    phone TEXT,
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES users(id)
+);
+
+-- Tabel Detail Pesanan
+CREATE TABLE order_items (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    order_id INTEGER,
+    product_id INTEGER,
+    quantity INTEGER,
+    price REAL,
+    FOREIGN KEY (order_id) REFERENCES orders(id),
+    FOREIGN KEY (product_id) REFERENCES products(id)
+);
+
+-- Tabel Pengguna
+CREATE TABLE users (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name TEXT NOT NULL,
+    email TEXT UNIQUE NOT NULL,
+    password TEXT NOT NULL,
+    phone TEXT,
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+
+
+10. Fitur Pembayaran (Midtrans) 
+
+    Gunakan Midtrans sebagai gateway pembayaran.
+    Dukungan:
+        OVO
+        Dana
+        Kartu kredit (Visa, Mastercard)
+        Bank transfer
+         
+    Integrasi:
+        Backend: Kirim data pesanan ke Midtrans via API
+        Frontend: Redirect ke halaman pembayaran Midtrans
+        Webhook: Terima notifikasi pembayaran dari Midtrans
+         
+     
+
+11. Kecepatan & Performa 
+
+    Gunakan caching untuk data produk (misalnya: Redis).
+    Optimasi gambar: resize & compress sebelum upload.
+    Gunakan lazy loading untuk gambar.
+    Gunakan CDN (jika diperlukan) untuk gambar produk.
+     
+
+12. SEO & Pemasaran 
+
+    Gunakan meta title & description untuk setiap halaman.
+    URL bersih: /produk/tas-kecil-handmade
+    Sitemap otomatis
+    Integrasi Google Analytics
+    Promosi di Instagram, TikTok, dan Facebook
+     
+
+13. Pengujian & Peluncuran 
+
+Tahap				Aktivitas
+
+Testing				Uji di HP (Android/iOS), cek kecepatan, uji pembayaran
+ 
+Optimasi			Perbaiki kecepatan, perbaiki bug, uji responsif
+ 
+Peluncuran			Deploy ke Vercel + Railway, cek semua fitur
+ 
+Monitoring			Gunakan logging, cek error, pantau traffic
+ 
+ 
+ 
+14. Pemeliharaan & Pembaruan 
+
+    Update produk secara berkala.
+    Backup database harian.
+    Perbarui keamanan (patch, dependensi).
+    Tambahkan fitur baru (misalnya: diskon, referal, newsletter).
+    Pantau ulasan dan umpan balik pengguna.
+     
+
+🛠️ Langkah Awal untuk Memulai 
+     
+	Siapkan lingkungan pengembangan: 
+
+npm init -y
+npm install express cors body-parser sqlite3
+npm install -D nodemon
+
+ 
+
+	Buat struktur folder seperti di atas. 
+ 
+
+	Buat server Express (server.js): 
+
+const express = require('express');
+const app = express();
+const port = 3000;
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+app.get('/', (req, res) => {
+  res.send('Hello, E-Commerce Handmade!');
+});
+
+app.listen(port, () => {
+  console.log(`Server running on http://localhost:${port}`);
+});
+ 
+
+	Integrasi Midtrans: 
+
+    Daftar akun di Midtrans 
+    Gunakan SDK Node.js: npm install midtrans-client
+     
+
+	Buat API untuk produk: 
+
+    GET /api/products → ambil semua produk
+    GET /api/products/:id → detail produk
+    POST /api/cart → tambah ke keranjang
+     
+
+	Buat frontend (React): 
+
+npx create-react-app frontend
+npm install react-router-dom axios
+
+	Deploy ke Vercel + Railway: 
+
+    Frontend: Vercel
+    Backend: Railway (dengan database SQLite)
+
+
+✅ Rekomendasi Plugin & Tools 
+
+Tujuan			Tools
+ 
+Frontend		Tailwind CSS, React, Axios
+ 
+Backend			Express.js, SQLite, JWT
+ 
+Pembayaran		Midtrans
+ 
+Hosting			Vercel (frontend), Railway (backend)
+ 
+Database		SQLite (untuk prototipe), bisa diganti ke PostgreSQL nanti
+ 
+Email			Nodemailer
+ 
+Deploy			GitHub + Vercel + Railway
+ 
+ 
+📌 Catatan Penting 
+
+    SQLite cocok untuk skala kecil (prototipe atau startup kecil).
+    Jika nanti traffic naik, ganti ke PostgreSQL atau MongoDB.
+    Untuk keamanan, gunakan HTTPS (via Vercel atau Let's Encrypt).
+    Gunakan env variables untuk menyimpan API key (Midtrans, DB, dll).
+     
+
+🎯 Kesimpulan 
+
+Website ini akan: 
+
+    Menarik bagi wanita 20–40 tahun di Indonesia.
+    Mudah digunakan di HP.
+    Menjual produk handmade dengan proses pembayaran aman.
+    Dibangun dengan teknologi modern (Node.js + SQLite).
+    Siap untuk dikembangkan ke skala besar.
+     
+
+📁 Struktur Proyek
+
+ecom-handmade/
+│
+├── backend/
+│   ├── server.js
+│   ├── routes/
+│   │   ├── products.js
+│   │   ├── cart.js
+│   │   ├── orders.js
+│   │   └── payments.js
+│   ├── controllers/
+│   │   ├── productController.js
+│   │   ├── cartController.js
+│   │   ├── orderController.js
+│   │   └── paymentController.js
+│   ├── models/
+│   │   ├── Product.js
+│   │   ├── Cart.js
+│   │   ├── Order.js
+│   │   └── User.js
+│   ├── config/
+│   │   └── db.js
+│   ├── middleware/
+│   │   └── auth.js
+│   └── utils/
+│       └── generateOrderId.js
+│
+├── frontend/
+│   ├── public/
+│   └── src/
+│       ├── components/
+│       │   ├── Navbar.jsx
+│       │   ├── ProductCard.jsx
+│       │   ├── CartItem.jsx
+│       │   └── CheckoutForm.jsx
+│       ├── pages/
+│       │   ├── Home.jsx
+│       │   ├── ProductDetail.jsx
+│       │   ├── Cart.jsx
+│       │   ├── Checkout.jsx
+│       │   └── OrderSuccess.jsx
+│       ├── services/
+│       │   ├── api.js
+│       │   └── paymentService.js
+│       ├── App.js
+│       └── index.js
+│
+├── database/
+│   └── db.sqlite
+│
+├── .env
+├── package.json
+└── README.md
+
+🔧 1. Backend: Node.js + Express + SQLite
+✅ backend/package.json
+✅ backend/config/db.js ✅ 
+✅ backend/server.js ✅ 
+✅ backend/routes/products.js ✅ 
+✅ backend/controllers/productController.js ✅ 
+
+backend/route/cart.js, order.js
+backend/controllers/orderController.js, cartController.js
+backend/models/Product.js, Cart.js, Order.js, User.js
+backend/middleware/auth.js
+utils/generateOrderId.js
+
+🎨 2. Frontend: React + Tailwind CSS
+✅ frontend/package.json ✅ 
+✅ frontend/src/App.js ✅ 
+✅ frontend/src/pages/Home.jsx ✅ 
+✅ frontend/src/components/ProductCard.jsx ✅ 
+✅ frontend/src/pages/ProductDetail.jsx ✅ 
+✅ frontend/src/pages/Cart.jsx ✅ 
+✅ frontend/src/pages/Checkout.jsx ✅ 
+✅ frontend/src/services/paymentService.js ✅ 
+
+frontend/src/components/ProductCard.jsx, CartItem.jsx
+frontend/src/pages/Home.jsx
+frontend/src/services/api.js, index.js
+
+💳 3. Contoh API Pembayaran Midtrans
+✅ backend/routes/payments.js ✅ 
+✅ backend/controllers/paymentController.js ✅ 
+
+🎨 4. Template Desain UI (Tailwind CSS) 
+✅ frontend/src/components/Navbar.jsx ✅ 
+✅ frontend/src/pages/OrderSuccess.jsx ✅ 
+
+🛠️ 5. File .env (Backend)
+
+package.json
+
+Berikut adalah kumpulan lengkap file yang belum dibuat sesuai struktur proyek, termasuk: 
+
+    ✅ backend/routes/cart.js, order.js  
+    ✅ backend/controllers/cartController.js, orderController.js  
+    ✅ backend/models/Product.js, Cart.js, Order.js, User.js  
+    ✅ backend/middleware/auth.js  
+    ✅ utils/generateOrderId.js  
+    ✅ frontend/src/components/ProductCard.jsx, CartItem.jsx  
+    ✅ frontend/src/pages/Home.jsx  
+    ✅ frontend/src/services/api.js, index.js  
+    ✅ package.json (frontend & backend)
+     
+
+🚀 6. Cara Menjalankan
+
+1. Backend
+cd backend
+npm install
+npm run dev
+
+2. Frontend
+cd frontend
+npm install
+npm start
+
+3. Database 
+File db.sqlite akan dibuat otomatis saat server dijalankan.
+
+📦 7. Fitur yang Bisa Dikembangkan 
+
+    ✅ Login & Register
+    ✅ Rating & Ulasan Produk
+    ✅ Filter & Sorting
+    ✅ Search Produk
+    ✅ Admin Panel
+    ✅ Email Notifikasi
+    ✅ Analytics (Google Analytics)
+     
+
+🎉 Kesimpulan 
+
+Anda sekarang memiliki: 
+
+    🔧 Backend Node.js + SQLite
+    🎨 Frontend React + Tailwind
+    💳 Pembayaran Midtrans (OVO, Dana, Kartu Kredit)
+    🖼️ Desain UI feminin, mobile-first
+     
+📦 Catatan Penting 
+
+     Pastikan database db.sqlite dibuat:
+        Jalankan backend, maka file akan dibuat otomatis.
+         
+     Install dependensi:
+     
+    cd backend && npm install
+    cd frontend && npm install
+     
+     Setup Midtrans:
+        Daftar di Midtrans 
+        Dapatkan server_key dan client_key
+        Tambahkan ke .env di backend
+         
+     Deploy:
+        Frontend: Vercel
+        Backend: Railway (dengan SQLite)
+        Atau gunakan lokal untuk testing
+         
+
+🎉 Kesimpulan 
+
+Anda sekarang memiliki: 
+
+    ✅ Backend lengkap (Express + SQLite + API)
+    ✅ Frontend lengkap (React + Tailwind)
+    ✅ Struktur proyek siap pakai
+    ✅ File yang dibutuhkan semua sudah tersedia
+     
+     
