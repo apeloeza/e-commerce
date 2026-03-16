@@ -1,0 +1,100 @@
+✅ Prompt untuk Membuat Website (Lengkap & Terstruktur) 
+
+    "Buatkan rencana lengkap untuk membangun sebuah website profesional dengan tujuan [sebutkan tujuan, misalnya: menjual produk, menyebarkan informasi, portofolio, blog, dll]. Website ini harus menggunakan teknologi modern dan ramah pengguna. Berikan detail sebagai berikut: 
+     
+    Tujuan Website   
+        Apa tujuan utama website ini? (Misalnya: menjual produk, menyebarkan konten, menampilkan portofolio, dll.)
+         
+    Target Pengguna   
+        Siapa yang akan menggunakan website ini? (Misalnya: pelanggan, pembaca, calon klien, dll.)
+         
+    Bahasa dan Lokalisasi   
+        Bahasa utama: [sebutkan, misalnya: Indonesia, Inggris, dll.]  
+        Apakah perlu dukungan bahasa lain? (Misalnya: bilingual, multibahasa)  
+        Apakah ada kebutuhan lokalisasi (misalnya: format tanggal, mata uang, waktu lokal)?
+         
+    Tema & Desain   
+        Gaya desain: [misalnya: minimalis, modern, klasik, futuristik, profesional, ceria]  
+        Palet warna: [sebutkan warna utama dan pendukung]  
+        Font yang digunakan: [misalnya: sans-serif, serif, atau nama font seperti Poppins, Roboto]  
+        Apakah perlu desain responsif (mobile-friendly)?  
+        Apakah perlu fitur dark mode?
+         
+    Struktur Website (Halaman Utama)   
+        Halaman utama (Home)  
+        Tentang Kami (About Us)  
+        Layanan/Produk  
+        Kontak  
+        Blog (jika ada)  
+        Portofolio (jika ada)  
+        Galeri  
+        Login / Register (jika perlu)  
+        Kebijakan Privasi & Syarat Penggunaan  
+        FAQ
+        
+    Fitur Penting   
+        Formulir kontak  
+        Fitur pencarian  
+        Keranjang belanja (jika e-commerce)  
+        Pembayaran online (jika e-commerce)  
+        Sosial media integration  
+        Newsletter subscription  
+        Analytics (Google Analytics, dll.)  
+        SEO-friendly  
+        Keamanan (SSL, enkripsi data)
+         
+    Teknologi & Platform   
+        Apakah ingin menggunakan:  
+            CMS (seperti WordPress, Webflow, Ghost)?  
+            Framework (React, Next.js, Vue.js)?  
+            Platform pembuatan website (Wix, Squarespace, etc.)?
+             
+        Apakah perlu backend (Node.js, PHP, Python, dll.)?  
+        Apakah perlu database (MySQL, Firebase, MongoDB)?  
+        Hosting: [misalnya: Vercel, Netlify, AWS, shared hosting]
+       
+    Kecepatan & Performa   
+        Optimasi gambar dan file  
+        Pemformatan kode  
+        CDN (Content Delivery Network)  
+        Cache dan lazy loading
+      
+    SEO & Pemasaran   
+        Optimasi SEO (meta tag, URL bersih, struktur konten)  
+        Integrasi Google Search Console  
+        Meta description dan title untuk setiap halaman  
+        Struktur URL yang SEO-friendly
+         
+    Pengujian & Peluncuran   
+        Tes di perangkat berbeda (desktop, mobile, tablet)  
+        Tes kecepatan (Google PageSpeed Insights)  
+        Tes ketersediaan (uptime)  
+        Uji coba dengan pengguna internal  
+        Peluncuran resmi
+        
+    Pemeliharaan & Pembaruan   
+        Pembaruan konten berkala  
+        Backup otomatis  
+        Pembaruan keamanan  
+        Monitoring performa dan traffic
+       
+    Tolong berikan: 
+
+        Daftar halaman dengan deskripsi singkat  
+        Struktur folder (jika perlu)  
+        Contoh kode dasar (HTML/CSS/JS atau framework yang dipilih)  
+        Rekomendasi tools dan plugin  
+        Panduan langkah demi langkah untuk memulai pembuatan website"
+     
+
+📌 Contoh Penggunaan Prompt (Khusus E-commerce) 
+
+    "Buatkan rencana lengkap untuk membangun website e-commerce produk handmade dengan bahasa Indonesia. Target pengguna adalah wanita usia 20–40 tahun di Indonesia. Website harus ramah mobile, memiliki keranjang belanja, pembayaran via OVO, Dana, dan kartu kredit. Gunakan WordPress dengan WooCommerce. Berikan struktur halaman, fitur utama, dan rekomendasi plugin." 
+     
+
+💡 Tips Tambahan: 
+
+    Jika kamu ingin membuat website tanpa coding, gunakan platform seperti Webflow, Wix, atau WordPress dengan theme siap pakai.
+    Jika ingin kustom dan fleksibel, gunakan Next.js + Tailwind CSS + Firebase.
+    Gunakan AI tools seperti Framer, DALL·E, atau ChatGPT untuk bantu desain dan konten.
+     
