@@ -1,0 +1,155 @@
+/* Global Styles */
+body {
+  font-family: 'Lato', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #E8F5E9; /* Hijau muda */
+  color: #2E7D32; /* Hijau tua */
+  overflow-x: hidden;
+  .hidden {
+  display: none !important;
+}
+}
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('img/couple.jpg');
+  background-size: cover;
+  background-position: center;
+  color: white;
+  text-align: center;
+  padding: 2rem;
+  min-height: 100vh;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.hero h2 {
+  font-size: 2rem;
+  font-weight: 300;
+  margin-bottom: 2rem;
+  color: white;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  color: white;
+}
+
+/* Button Styles */
+button {
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin: 0.5rem;
+}
+
+/* Buka Undangan Button (Hijau) */
+#openInvitation {
+  background: #4CAF50;
+  color: white;
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  border-radius: 50px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  margin-top: 2rem;
+}
+
+#openInvitation:hover {
+  background: #388E3C;
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(76, 175, 80, 0.3);
+}
+
+/* Overlay Styles */
+#invitationOverlay {
+  display: none;
+  z-index: 1000;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Close Button */
+#closeInvitation {
+  background: #4CAF50;
+  color: white;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  border-radius: 50px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  margin-top: 1rem;
+}
+
+#closeInvitation:hover {
+  background: #388E3C;
+  transform: scale(1.05);
+}
+
+/* Music Toggle Button */
+#toggleMusic {
+  background: #4CAF50;
+  border: 2px solid #388E3C;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  z-index: 1000;
+}
+
+#toggleMusic:hover {
+  transform: scale(1.1);
+}
+
+/* Informasi Pernikahan */
+#invitationOverlay h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #2E7D32;
+  margin-bottom: 1rem;
+}
+
+#invitationOverlay p {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  color: #2E7D32;
+}
+
+#invitationOverlay img {
+  margin-top: 1rem;
+  border: 4px solid #4CAF50;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero h2 {
+    font-size: 1.8rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  #openInvitation {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+  }
+}

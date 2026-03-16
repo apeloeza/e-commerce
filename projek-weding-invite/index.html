@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Undangan Pernikahan | Rina & Rizal</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
+</head>
+<body class="bg-green-50">
+  <!-- Background Music -->
+  <audio id="backgroundMusic" loop>
+    <source src="music/background.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- Hero Section -->
+  <section class="hero h-screen flex items-center justify-center bg-cover bg-center" style="background-image: url('img/couple.jpg')">
+    <div class="text-center text-white">
+      <h1 class="text-5xl font-bold mb-4">Undangan Pernikahan</h1>
+      <h2 class="text-3xl font-light mb-6">Rina & Rizal</h2>
+      <p class="text-xl mb-8">Kami mengundang Anda untuk menyaksikan hari bahagia kami</p>
+      <button id="openInvitation" class="bg-green-600 text-white px-8 py-3 rounded-full hover:bg-green-700 transition-colors">
+        Buka Undangan
+      </button>
+    </div>
+  </section>
+
+  <!-- Music Toggle -->
+  <button id="toggleMusic" class="fixed bottom-4 right-4 bg-white p-3 rounded-full shadow-lg">
+    <span class="text-2xl">🔊</span>
+  </button>
+
+  <!-- Overlay (Hidden) -->
+  <div id="invitationOverlay" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50">
+    <div class="absolute inset-0 flex items-center justify-center">
+      <div class="bg-white rounded-xl p-8 max-w-2xl w-full mx-4">
+        <h2 class="text-3xl font-bold text-center mb-6">Undangan Pernikahan</h2>
+        <p class="text-center text-lg mb-8">Terima kasih telah hadir dalam hari spesial kami!</p>
+
+        <!-- Informasi Pernikahan -->
+        <div class="text-center mb-8">
+          <h3 class="text-xl font-bold text-green-600">Informasi Pernikahan</h3>
+          <p class="text-lg mt-4"><strong>Tanggal:</strong> 15 April 2025</p>
+          <p class="text-lg"><strong>Waktu:</strong> 14:00 WIB</p>
+          <p class="text-lg"><strong>Lokasi:</strong> Gedung Pernikahan Indah</p>
+          <p class="text-lg"><strong>Alamat:</strong> Jl. Pernikahan No. 123, Jakarta</p>
+          <p class="text-lg mt-4"><strong>Deskripsi:</strong> Kami sangat berharap Anda dapat hadir dalam hari spesial kami. Acara akan diadakan dengan penuh kebahagiaan dan kehangatan.</p>
+        </div>
+
+        <!-- Foto Pasangan -->
+        <div class="text-center mb-8">
+          <img src="img/couple.jpg" alt="Rina & Rizal" class="w-64 h-64 object-cover rounded-full mx-auto border-4 border-green-600 shadow-lg">
+        </div>
+
+        <!-- Tombol Tutup -->
+        <div class="text-center">
+          <button id="closeInvitation" class="bg-green-600 text-white px-6 py-2 rounded-full hover:bg-green-700 transition-colors">
+            Tutup
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
